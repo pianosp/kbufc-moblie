@@ -1,10 +1,13 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'fixture_model.dart';
@@ -17,10 +20,27 @@ class FixtureWidget extends StatefulWidget {
   _FixtureWidgetState createState() => _FixtureWidgetState();
 }
 
-class _FixtureWidgetState extends State<FixtureWidget> {
+class _FixtureWidgetState extends State<FixtureWidget>
+    with TickerProviderStateMixin {
   late FixtureModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'containerOnPageLoadAnimation': AnimationInfo(
+      loop: true,
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 1000.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
@@ -598,7 +618,9 @@ class _FixtureWidgetState extends State<FixtureWidget> {
                                                                       .w600,
                                                             ),
                                                       ),
-                                                    ),
+                                                    ).animateOnPageLoad(
+                                                        animationsMap[
+                                                            'containerOnPageLoadAnimation']!),
                                                   ),
                                                 ),
                                             ],

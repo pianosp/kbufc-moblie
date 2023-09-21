@@ -49,7 +49,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
           child: AppBar(
             backgroundColor: Color(0xFFF15723),
             iconTheme: IconThemeData(color: Colors.white),
-            automaticallyImplyLeading: true,
+            automaticallyImplyLeading: false,
             title: Text(
               'MY CLUB',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -192,11 +192,11 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          10.0, 110.0, 10.0, 0.0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: MediaQuery.sizeOf(context).height * 0.39,
+                        height: MediaQuery.sizeOf(context).height * 0.47,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -212,7 +212,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                               20.0, 20.0, 20.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.879,
-                            height: MediaQuery.sizeOf(context).height * 0.367,
+                            height: MediaQuery.sizeOf(context).height * 0.479,
                             decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -227,6 +227,10 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                   ),
                                   child: Image.asset(
                                     'assets/images/324758314_1390316535039540_4466694356712901201_n.jpg',
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.35,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -268,6 +272,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
+                                                        fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.w100,
                                                       ),
