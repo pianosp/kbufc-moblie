@@ -413,7 +413,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                     ),
-                                keyboardType: TextInputType.phone,
                                 validator: _model.phoneControllerValidator
                                     .asValidator(context),
                                 inputFormatters: [
