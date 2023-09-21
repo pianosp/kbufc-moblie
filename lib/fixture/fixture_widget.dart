@@ -100,13 +100,13 @@ class _FixtureWidgetState extends State<FixtureWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  FutureBuilder<ApiCallResponse>(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+                  child: FutureBuilder<ApiCallResponse>(
                     future: (_model.apiRequestCompleter ??=
                             Completer<ApiCallResponse>()
                               ..complete(FixListCall.call()))
@@ -615,8 +615,8 @@ class _FixtureWidgetState extends State<FixtureWidget> {
                       );
                     },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

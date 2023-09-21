@@ -298,8 +298,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -311,8 +310,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 12.0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Text(
                                                 'COUNTRY',
                                                 style:
@@ -340,7 +338,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
-                                                        fontSize: 20.0,
+                                                        fontSize: 19.0,
                                                       ),
                                                 ),
                                               ],
@@ -355,46 +353,41 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                           color: Color(0xE77E7E7E),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 40.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
-                                              child: Text(
-                                                'DATE OF BIRTH',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 16.0,
-                                                        ),
-                                              ),
-                                            ),
-                                            Text(
-                                              StaffDetailCall.dob(
-                                                columnStaffDetailResponse
-                                                    .jsonBody,
-                                              ).toString(),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 5.0),
+                                            child: Text(
+                                              'DATE OF BIRTH',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFF15822),
-                                                        fontSize: 20.0,
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
                                                       ),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                          Text(
+                                            StaffDetailCall.dob(
+                                              columnStaffDetailResponse
+                                                  .jsonBody,
+                                            ).toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFFF15822),
+                                                  fontSize: 19.0,
+                                                ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
@@ -441,7 +434,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                                         fontFamily: 'Poppins',
                                                         color:
                                                             Color(0xFFF15822),
-                                                        fontSize: 20.0,
+                                                        fontSize: 19.0,
                                                       ),
                                             ),
                                           ],
