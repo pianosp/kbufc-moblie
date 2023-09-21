@@ -46,14 +46,14 @@ class SignUpModel extends FlutterFlowModel {
     }
 
     if (val.length < 8) {
-      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*), \n1 Digit, 1 Lowercase';
+      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*),1 Digit, 1 Lowercase';
     }
     if (val.length > 20) {
       return 'Maximum 20 characters allowed, currently ${val.length}.';
     }
     if (!RegExp('^(?=.*[A-Z])(?=.*[!@#\\\$&*])(?=.*[0-9])(?=.*[a-z]).{8,}\$')
         .hasMatch(val)) {
-      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*), \n1 Digit, 1 Lowercase';
+      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*),1 Digit, 1 Lowercase';
     }
     return null;
   }
