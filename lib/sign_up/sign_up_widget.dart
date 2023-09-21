@@ -317,9 +317,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.number,
                           validator: _model.phoneControllerValidator
                               .asValidator(context),
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                          ],
                         ),
                       ),
                       Padding(
