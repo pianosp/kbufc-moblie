@@ -260,6 +260,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             Duration(milliseconds: 100),
                             () => setState(() {}),
                           ),
+                          textCapitalization: TextCapitalization.none,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Phone',
@@ -317,7 +318,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          keyboardType: TextInputType.number,
+                          keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true),
                           validator: _model.phoneControllerValidator
                               .asValidator(context),
                           inputFormatters: [
