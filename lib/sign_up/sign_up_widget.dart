@@ -320,9 +320,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           keyboardType: TextInputType.phone,
                           validator: _model.phoneControllerValidator
                               .asValidator(context),
-                          inputFormatters: [
-                            FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-                          ],
                         ),
                       ),
                       Padding(

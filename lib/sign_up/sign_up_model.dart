@@ -31,7 +31,7 @@ class SignUpModel extends FlutterFlowModel {
     if (!RegExp(
             '^[a-z]+[a-z0-9.]*@(gmail|outlook|icloud|yahoo|hotmail)\\.com\$')
         .hasMatch(val)) {
-      return 'only letters (a-z), number (0-9), and periods (.) are allowed.';
+      return 'only letters (a-z), number (0-9), and periods (.)\n are allowed.';
     }
     return null;
   }
@@ -46,14 +46,14 @@ class SignUpModel extends FlutterFlowModel {
     }
 
     if (val.length < 8) {
-      return 'Must be contain 8 character 1 UpperCase, 1 Special Character (!@#\$&*), 1 Digit, 1 Lowercase';
+      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*), \n1 Digit, 1 Lowercase';
     }
     if (val.length > 20) {
       return 'Maximum 20 characters allowed, currently ${val.length}.';
     }
     if (!RegExp('^(?=.*[A-Z])(?=.*[!@#\\\$&*])(?=.*[0-9])(?=.*[a-z]).{8,}\$')
         .hasMatch(val)) {
-      return 'Must be contain 8 character 1 UpperCase, 1 Special Character (!@#\$&*), 1 Digit, 1 Lowercase';
+      return 'Must be contain 8 character 1 UpperCase, 1 Special \nCharacter (!@#\$&*), \n1 Digit, 1 Lowercase';
     }
     return null;
   }
