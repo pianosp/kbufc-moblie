@@ -206,7 +206,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                             topRight: Radius.circular(30.0),
                           ),
                         ),
-                        alignment: AlignmentDirectional(0.00, 0.00),
+                        alignment: AlignmentDirectional(0.00, -1.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 20.0, 0.0),
@@ -262,6 +262,8 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                       ),
                                             ),
                                             Text(
@@ -274,7 +276,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                                         color: Colors.white,
                                                         fontSize: 12.0,
                                                         fontWeight:
-                                                            FontWeight.w100,
+                                                            FontWeight.w300,
                                                       ),
                                             ),
                                           ],
