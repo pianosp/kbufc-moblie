@@ -390,7 +390,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                                         fontFamily: 'Poppins',
                                                         color:
                                                             Color(0xFFF15822),
-                                                        fontSize: 25.0,
+                                                        fontSize: 20.0,
                                                       ),
                                             ),
                                           ],
@@ -441,7 +441,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
                                                         fontFamily: 'Poppins',
                                                         color:
                                                             Color(0xFFF15822),
-                                                        fontSize: 25.0,
+                                                        fontSize: 20.0,
                                                       ),
                                             ),
                                           ],

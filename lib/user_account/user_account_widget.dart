@@ -43,8 +43,47 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFFF15723),
-        body: SafeArea(
-          top: true,
+        appBar: PreferredSize(
+          preferredSize:
+              Size.fromHeight(MediaQuery.sizeOf(context).height * 0.08),
+          child: AppBar(
+            backgroundColor: Color(0xFFF15723),
+            iconTheme: IconThemeData(color: Colors.white),
+            automaticallyImplyLeading: true,
+            title: Text(
+              'MY CLUB',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                    fontSize: 25.0,
+                  ),
+            ),
+            actions: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 30.0,
+                borderWidth: 1.0,
+                buttonSize: 60.0,
+                icon: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
+                onPressed: () async {
+                  context.pushNamed('Setting');
+                },
+              ),
+            ],
+            centerTitle: true,
+            elevation: 2.0,
+          ),
+        ),
+        body: Container(
+          width: double.infinity,
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          decoration: BoxDecoration(
+            color: Color(0xFFF15723),
+          ),
           child: FutureBuilder<ApiCallResponse>(
             future: UserInfoCall.call(
               mail: FFAppState().mail,
@@ -69,50 +108,6 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 60.0,
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.transparent,
-                          size: 30.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                      Text(
-                        'MY CLUB',
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Poppins',
-                              color: Colors.white,
-                              fontSize: 25.0,
-                            ),
-                      ),
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 60.0,
-                        icon: Icon(
-                          Icons.settings,
-                          color: Colors.white,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          context.pushNamed('Setting');
-                        },
-                      ),
-                    ],
-                  ),
                   Container(
                     width: 120.0,
                     height: 120.0,
@@ -180,23 +175,27 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                           ),
                     ),
                   ),
-                  Text(
-                    UserInfoCall.points(
-                      columnUserInfoResponse.jsonBody,
-                    ).toString(),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                          fontSize: 50.0,
-                          fontWeight: FontWeight.w300,
-                        ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Text(
+                      UserInfoCall.points(
+                        columnUserInfoResponse.jsonBody,
+                      ).toString(),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
                   ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 0.44,
+                      height: MediaQuery.sizeOf(context).height * 0.39,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -206,12 +205,13 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                           topRight: Radius.circular(30.0),
                         ),
                       ),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 20.0, 0.0),
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.8,
-                          height: MediaQuery.sizeOf(context).height * 0.4,
+                          width: MediaQuery.sizeOf(context).width * 0.879,
+                          height: MediaQuery.sizeOf(context).height * 0.367,
                           decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -226,9 +226,6 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                 ),
                                 child: Image.asset(
                                   'assets/images/324758314_1390316535039540_4466694356712901201_n.jpg',
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.3,
                                   fit: BoxFit.cover,
                                 ),
                               ),

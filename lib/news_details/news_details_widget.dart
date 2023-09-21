@@ -127,7 +127,7 @@ class _NewsDetailsWidgetState extends State<NewsDetailsWidget> {
                                 Container(
                                   width: double.infinity,
                                   height:
-                                      MediaQuery.sizeOf(context).height * 0.2,
+                                      MediaQuery.sizeOf(context).height * 0.18,
                                   decoration: BoxDecoration(
                                     color: Color(0xCC000000),
                                   ),
@@ -135,41 +135,44 @@ class _NewsDetailsWidgetState extends State<NewsDetailsWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.00, 0.00),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        20.0, 0.0, 20.0, 0.0),
-                                                child: Text(
-                                                  NewsDetailsCall.title(
-                                                    columnNewsDetailsResponse
-                                                        .jsonBody,
-                                                  ).toString(),
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Sarabun',
-                                                        color: Colors.white,
-                                                        fontSize: 30.0,
-                                                      ),
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 20.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.00, 0.00),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 20.0, 0.0),
+                                                  child: Text(
+                                                    NewsDetailsCall.title(
+                                                      columnNewsDetailsResponse
+                                                          .jsonBody,
+                                                    ).toString(),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Sarabun',
+                                                          color: Colors.white,
+                                                          fontSize: 28.0,
+                                                        ),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Align(

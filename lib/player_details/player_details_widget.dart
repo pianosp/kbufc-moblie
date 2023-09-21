@@ -110,375 +110,320 @@ class _PlayerDetailsWidgetState extends State<PlayerDetailsWidget> {
               );
             }
             final columnPlayersDetailsResponse = snapshot.data!;
-            return Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Stack(
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional(1.00, 0.00),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                        child: Text(
-                          PlayersDetailsCall.number(
-                            columnPlayersDetailsResponse.jsonBody,
-                          ).toString(),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xA6FFFFFF),
-                                    fontSize: 100.0,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Image.network(
-                      PlayersDetailsCall.link(
-                        columnPlayersDetailsResponse.jsonBody,
-                      ),
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 0.44,
-                      fit: BoxFit.contain,
-                    ),
-                  ],
-                ),
-                Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 0.48,
-                  decoration: BoxDecoration(
-                    color: Color(0xCD000000),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 4.0,
-                        color: Color(0x33000000),
-                        offset: Offset(0.0, 2.0),
-                      )
-                    ],
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'AGE',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFF15822),
-                                      ),
-                                ),
-                                Text(
-                                  PlayersDetailsCall.age(
-                                    columnPlayersDetailsResponse.jsonBody,
-                                  ).toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 45.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 80.0,
-                              child: VerticalDivider(
-                                thickness: 1.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'APPEARANCES',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFF15822),
-                                      ),
-                                ),
-                                Text(
-                                  PlayersDetailsCall.appearance(
-                                    columnPlayersDetailsResponse.jsonBody,
-                                  ).toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 45.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 80.0,
-                              child: VerticalDivider(
-                                thickness: 1.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'GOALS',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFF15822),
-                                      ),
-                                ),
-                                Text(
-                                  PlayersDetailsCall.score(
-                                    columnPlayersDetailsResponse.jsonBody,
-                                  ).toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 45.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Text(
-                          PlayersDetailsCall.position(
-                            columnPlayersDetailsResponse.jsonBody,
-                          ).toString(),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0x5FFFFFFF),
-                                    fontSize: 20.0,
-                                  ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: Text(
-                                PlayersDetailsCall.number(
-                                  columnPlayersDetailsResponse.jsonBody,
-                                ).toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 20.0,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: Text(
-                                PlayersDetailsCall.firstname(
-                                  columnPlayersDetailsResponse.jsonBody,
-                                ).toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 20.0,
-                                    ),
-                              ),
-                            ),
-                            Text(
-                              PlayersDetailsCall.lastname(
-                                columnPlayersDetailsResponse.jsonBody,
-                              ).toString(),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 20.0,
-                                  ),
-                            ),
-                          ],
-                        ),
-                        Padding(
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Stack(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(1.00, 0.00),
+                        child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 5.0, 0.0, 0.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.9,
-                            height: MediaQuery.sizeOf(context).height * 0.46,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Profile',
+                              0.0, 0.0, 20.0, 0.0),
+                          child: Text(
+                            PlayersDetailsCall.number(
+                              columnPlayersDetailsResponse.jsonBody,
+                            ).toString(),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xA6FFFFFF),
+                                  fontSize: 100.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Image.network(
+                        PlayersDetailsCall.link(
+                          columnPlayersDetailsResponse.jsonBody,
+                        ),
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 0.44,
+                        fit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
+                  Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 0.48,
+                    decoration: BoxDecoration(
+                      color: Color(0xCD000000),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4.0,
+                          color: Color(0x33000000),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'AGE',
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .titleMedium
                                         .override(
                                           fontFamily: 'Poppins',
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFFF15822),
                                         ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 70.0,
-                                  child: Divider(
-                                    thickness: 5.0,
-                                    color: Color(0xFFF15822),
+                                  Text(
+                                    PlayersDetailsCall.age(
+                                      columnPlayersDetailsResponse.jsonBody,
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontSize: 45.0,
+                                        ),
                                   ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 80.0,
+                                child: VerticalDivider(
+                                  thickness: 1.0,
+                                  color: Colors.white,
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            26.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 12.0),
-                                              child: Text(
-                                                'COUNTRY',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 16.0,
-                                                        ),
-                                              ),
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  PlayersDetailsCall.country(
-                                                    columnPlayersDetailsResponse
-                                                        .jsonBody,
-                                                  ).toString(),
-                                                  textAlign: TextAlign.start,
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'APPEARANCES',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFFF15822),
+                                        ),
+                                  ),
+                                  Text(
+                                    PlayersDetailsCall.appearance(
+                                      columnPlayersDetailsResponse.jsonBody,
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontSize: 45.0,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 80.0,
+                                child: VerticalDivider(
+                                  thickness: 1.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'GOALS',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFFF15822),
+                                        ),
+                                  ),
+                                  Text(
+                                    PlayersDetailsCall.score(
+                                      columnPlayersDetailsResponse.jsonBody,
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontSize: 45.0,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Text(
+                            PlayersDetailsCall.position(
+                              columnPlayersDetailsResponse.jsonBody,
+                            ).toString(),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0x5FFFFFFF),
+                                  fontSize: 20.0,
+                                ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 5.0, 0.0),
+                                child: Text(
+                                  PlayersDetailsCall.number(
+                                    columnPlayersDetailsResponse.jsonBody,
+                                  ).toString(),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                      ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 5.0, 0.0),
+                                child: Text(
+                                  PlayersDetailsCall.firstname(
+                                    columnPlayersDetailsResponse.jsonBody,
+                                  ).toString(),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                      ),
+                                ),
+                              ),
+                              Text(
+                                PlayersDetailsCall.lastname(
+                                  columnPlayersDetailsResponse.jsonBody,
+                                ).toString(),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 0.0),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: MediaQuery.sizeOf(context).height * 0.46,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Profile',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.black,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 70.0,
+                                    child: Divider(
+                                      thickness: 5.0,
+                                      color: Color(0xFFF15822),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  26.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 12.0),
+                                                child: Text(
+                                                  'COUNTRY',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 80.0,
-                                        child: VerticalDivider(
-                                          thickness: 3.0,
-                                          color: Color(0xE77E7E7E),
-                                        ),
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
-                                            child: Text(
-                                              'HEIGHT',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.black,
                                                         fontSize: 16.0,
                                                       ),
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                PlayersDetailsCall.hh(
-                                                  columnPlayersDetailsResponse
-                                                      .jsonBody,
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    PlayersDetailsCall.country(
+                                                      columnPlayersDetailsResponse
+                                                          .jsonBody,
+                                                    ).toString(),
+                                                    textAlign: TextAlign.start,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
                                                           fontSize: 20.0,
                                                         ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        3.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'cm',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                ),
+                                                  ),
+                                                ],
                                               ),
                                             ],
                                           ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 40.0, 0.0),
-                                        child: Column(
+                                        ),
+                                        SizedBox(
+                                          height: 80.0,
+                                          child: VerticalDivider(
+                                            thickness: 3.0,
+                                            color: Color(0xE77E7E7E),
+                                          ),
+                                        ),
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
@@ -486,7 +431,7 @@ class _PlayerDetailsWidgetState extends State<PlayerDetailsWidget> {
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: Text(
-                                                'WEIGHT',
+                                                'HEIGHT',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -501,7 +446,7 @@ class _PlayerDetailsWidgetState extends State<PlayerDetailsWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  PlayersDetailsCall.ww(
+                                                  PlayersDetailsCall.hh(
                                                     columnPlayersDetailsResponse
                                                         .jsonBody,
                                                   ).toString(),
@@ -519,7 +464,7 @@ class _PlayerDetailsWidgetState extends State<PlayerDetailsWidget> {
                                                       .fromSTEB(
                                                           3.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'kg',
+                                                    'cm',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -534,121 +479,190 @@ class _PlayerDetailsWidgetState extends State<PlayerDetailsWidget> {
                                             ),
                                           ],
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 40.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 12.0),
+                                                child: Text(
+                                                  'WEIGHT',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    PlayersDetailsCall.ww(
+                                                      columnPlayersDetailsResponse
+                                                          .jsonBody,
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                          fontSize: 20.0,
+                                                        ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(3.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'kg',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: Colors.black,
+                                                            fontSize: 20.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            26.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
-                                              child: Text(
-                                                'DATE OF BIRTH',
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  26.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Text(
+                                                  'DATE OF BIRTH',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
+                                                PlayersDetailsCall.dob(
+                                                  columnPlayersDetailsResponse
+                                                      .jsonBody,
+                                                ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 16.0,
+                                                          color:
+                                                              Color(0xFFF15822),
+                                                          fontSize: 25.0,
                                                         ),
                                               ),
-                                            ),
-                                            Text(
-                                              PlayersDetailsCall.dob(
-                                                columnPlayersDetailsResponse
-                                                    .jsonBody,
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  26.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Text(
+                                                  'JOINED',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFF15822),
-                                                        fontSize: 25.0,
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
                                                       ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            26.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
-                                              child: Text(
-                                                'JOINED',
+                                                ),
+                                              ),
+                                              Text(
+                                                PlayersDetailsCall.join(
+                                                  columnPlayersDetailsResponse
+                                                      .jsonBody,
+                                                ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
-                                                          color: Colors.black,
-                                                          fontSize: 16.0,
+                                                          color:
+                                                              Color(0xFFF15822),
+                                                          fontSize: 25.0,
                                                         ),
                                               ),
-                                            ),
-                                            Text(
-                                              PlayersDetailsCall.join(
-                                                columnPlayersDetailsResponse
-                                                    .jsonBody,
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFF15822),
-                                                        fontSize: 25.0,
-                                                      ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           },
         ),
