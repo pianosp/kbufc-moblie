@@ -318,8 +318,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          keyboardType: const TextInputType.numberWithOptions(
-                              decimal: true),
                           validator: _model.phoneControllerValidator
                               .asValidator(context),
                           inputFormatters: [
