@@ -196,7 +196,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                           EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: MediaQuery.sizeOf(context).height * 0.47,
+                        height: MediaQuery.sizeOf(context).height * 0.383,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -212,7 +212,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                               20.0, 20.0, 20.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.879,
-                            height: MediaQuery.sizeOf(context).height * 0.479,
+                            height: MediaQuery.sizeOf(context).height * 0.345,
                             decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -230,7 +230,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: MediaQuery.sizeOf(context).height *
-                                        0.35,
+                                        0.235,
                                     fit: BoxFit.cover,
                                   ),
                                 ),

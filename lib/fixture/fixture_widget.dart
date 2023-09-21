@@ -34,7 +34,7 @@ class _FixtureWidgetState extends State<FixtureWidget>
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
-          duration: 1000.ms,
+          duration: 4000.ms,
           begin: 0.0,
           end: 1.0,
         ),
