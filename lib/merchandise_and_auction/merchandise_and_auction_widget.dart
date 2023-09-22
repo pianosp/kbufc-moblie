@@ -128,8 +128,9 @@ class _MerchandiseAndAuctionWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://kbufc-shop.flutterflow.app/loginPage');
                             },
                             text: 'SHOP NOW',
                             options: FFButtonOptions(
