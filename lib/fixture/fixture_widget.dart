@@ -46,6 +46,7 @@ class _FixtureWidgetState extends State<FixtureWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => FixtureModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

@@ -25,6 +25,7 @@ class _MerchandiseAndAuctionWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => MerchandiseAndAuctionModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

@@ -27,6 +27,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EditProfileModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

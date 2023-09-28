@@ -26,6 +26,7 @@ class _LeagueTableWidgetState extends State<LeagueTableWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LeagueTableModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

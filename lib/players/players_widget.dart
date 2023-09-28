@@ -26,6 +26,7 @@ class _PlayersWidgetState extends State<PlayersWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PlayersModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

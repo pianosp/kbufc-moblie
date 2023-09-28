@@ -24,6 +24,7 @@ class _SettingWidgetState extends State<SettingWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SettingModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override
@@ -55,7 +56,8 @@ class _SettingWidgetState extends State<SettingWidget> {
               buttonSize: 40.0,
               icon: Icon(
                 Icons.arrow_back,
-                color: FlutterFlowTheme.of(context).primaryText,
+                // color: FlutterFlowTheme.of(context).primaryText,
+                color: Colors.black,
                 size: 24.0,
               ),
               onPressed: () async {

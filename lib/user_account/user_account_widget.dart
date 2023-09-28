@@ -25,6 +25,7 @@ class _UserAccountWidgetState extends State<UserAccountWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UserAccountModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

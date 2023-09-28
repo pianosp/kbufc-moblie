@@ -30,6 +30,7 @@ class _NewsDetailsWidgetState extends State<NewsDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NewsDetailsModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

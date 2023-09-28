@@ -25,6 +25,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HistoryModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

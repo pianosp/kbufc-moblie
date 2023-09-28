@@ -33,7 +33,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeModel());
-
+    setDarkModeSetting(context, ThemeMode.light);
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().isLogined == false) {
@@ -494,251 +494,275 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                         ],
                       ),
-                    ),
+                    ), // Generated code for this Column Widget...
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.8,
-                        height: MediaQuery.sizeOf(context).height * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF1F4F8),
-                        ),
-                        child: FutureBuilder<ApiCallResponse>(
-                          future: (_model.apiRequestCompleter ??=
-                                  Completer<ApiCallResponse>()
-                                    ..complete(NewsListCall.call()))
-                              .future,
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final listViewNewsListResponse = snapshot.data!;
-                            return Builder(
-                              builder: (context) {
-                                final news = (NewsListCall.news(
-                                          listViewNewsListResponse.jsonBody,
-                                        )?.toList() ??
-                                        [])
-                                    .take(10)
-                                    .toList();
-                                return InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    if (FFAppState().isLogined == false) {
-                                      context.pushNamed('LoginPage');
-                                    }
-                                  },
-                                  child: RefreshIndicator(
-                                    onRefresh: () async {
-                                      setState(() =>
-                                          _model.apiRequestCompleter = null);
-                                      await _model.waitForApiRequestCompleted();
-                                    },
-                                    child: ListView.builder(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      itemCount: news.length,
-                                      itemBuilder: (context, newsIndex) {
-                                        final newsItem = news[newsIndex];
-                                        return Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFF1F4F8),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(25, 0, 25, 0),
+                              child: FutureBuilder<ApiCallResponse>(
+                                future: (_model.apiRequestCompleter ??=
+                                        Completer<ApiCallResponse>()
+                                          ..complete(NewsListCall.call()))
+                                    .future,
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50,
+                                        height: 50,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
                                           ),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'NewsDetails',
-                                                queryParameters: {
-                                                  'newsId': serializeParam(
-                                                    getJsonField(
-                                                      newsItem,
-                                                      r'''$.news_id''',
-                                                    ).toString(),
-                                                    ParamType.String,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final listViewNewsListResponse =
+                                      snapshot.data!;
+                                  return Builder(
+                                    builder: (context) {
+                                      final news = (NewsListCall.news(
+                                                listViewNewsListResponse
+                                                    .jsonBody,
+                                              )?.toList() ??
+                                              [])
+                                          .take(10)
+                                          .toList();
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          if (FFAppState().isLogined == false) {
+                                            context.pushNamed('LoginPage');
+                                          }
+                                        },
+                                        child: RefreshIndicator(
+                                          onRefresh: () async {
+                                            setState(() => _model
+                                                .apiRequestCompleter = null);
+                                            await _model
+                                                .waitForApiRequestCompleted();
+                                          },
+                                          child: ListView.builder(
+                                            padding: EdgeInsets.zero,
+                                            shrinkWrap: true,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount: news.length,
+                                            itemBuilder: (context, newsIndex) {
+                                              final newsItem = news[newsIndex];
+                                              return Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                        .width,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFF1F4F8),
+                                                ),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      'NewsDetails',
+                                                      queryParameters: {
+                                                        'newsId':
+                                                            serializeParam(
+                                                          getJsonField(
+                                                            newsItem,
+                                                            r'''$.news_id''',
+                                                          ).toString(),
+                                                          ParamType.String,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .leftToRight,
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Card(
+                                                    clipBehavior: Clip
+                                                        .antiAliasWithSaveLayer,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(0),
+                                                        bottomRight:
+                                                            Radius.circular(0),
+                                                        topLeft:
+                                                            Radius.circular(10),
+                                                        topRight:
+                                                            Radius.circular(10),
+                                                      ),
+                                                    ),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Image.network(
+                                                          getJsonField(
+                                                            newsItem,
+                                                            r'''$.link''',
+                                                          ),
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.3,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        Container(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.08,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xD5000000),
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Flexible(
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    getJsonField(
+                                                                      newsItem,
+                                                                      r'''$.title''',
+                                                                    ).toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Sarabun',
+                                                                          color:
+                                                                              Colors.white,
+                                                                          fontSize:
+                                                                              12,
+                                                                          fontWeight:
+                                                                              FontWeight.normal,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.05,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Colors.white,
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  getJsonField(
+                                                                    newsItem,
+                                                                    r'''$.date''',
+                                                                  ).toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: Colors
+                                                                            .black,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .leftToRight,
-                                                  ),
-                                                },
+                                                ),
                                               );
                                             },
-                                            child: Card(
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(0.0),
-                                                  bottomRight:
-                                                      Radius.circular(0.0),
-                                                  topLeft:
-                                                      Radius.circular(10.0),
-                                                  topRight:
-                                                      Radius.circular(10.0),
-                                                ),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Image.network(
-                                                    getJsonField(
-                                                      newsItem,
-                                                      r'''$.link''',
-                                                    ),
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        1.0,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.3,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                  Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        1.0,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.08,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xD5000000),
-                                                    ),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Flexible(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              getJsonField(
-                                                                newsItem,
-                                                                r'''$.title''',
-                                                              ).toString(),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Sarabun',
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        1.0,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.05,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            getJsonField(
-                                                              newsItem,
-                                                              r'''$.date''',
-                                                            ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: Colors
-                                                                      .black,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
                                           ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               );

@@ -31,6 +31,7 @@ class _PredictionWidgetState extends State<PredictionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PredictionModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

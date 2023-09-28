@@ -29,6 +29,7 @@ class _StaffDetailWidgetState extends State<StaffDetailWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => StaffDetailModel());
+    setDarkModeSetting(context, ThemeMode.light);
   }
 
   @override

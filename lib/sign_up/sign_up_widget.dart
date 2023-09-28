@@ -28,7 +28,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SignUpModel());
-
+    setDarkModeSetting(context, ThemeMode.light);
     _model.mailController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
     _model.phoneController ??= TextEditingController();
