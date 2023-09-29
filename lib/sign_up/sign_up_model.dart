@@ -67,10 +67,10 @@ class SignUpModel extends FlutterFlowModel {
     }
 
     if (val.length < 10) {
-      return 'Requires at least 10 characters.';
+      return 'Requires  10 digits.';
     }
     if (val.length > 10) {
-      return 'Maximum 10 characters allowed, currently ${val.length}.';
+      return 'Maximum 10 digits allowed, currently ${val.length}.';
     }
 
     return null;
@@ -87,6 +87,9 @@ class SignUpModel extends FlutterFlowModel {
     if (val.length < 1) {
       return 'Requires at least 1 characters.';
     }
+    if (val.length > 50) {
+      return 'Maximum 50 characters allowed, currently ${val.length}.';
+    }
 
     return null;
   }
@@ -101,6 +104,9 @@ class SignUpModel extends FlutterFlowModel {
 
     if (val.length < 1) {
       return 'Requires at least 1 characters.';
+    }
+    if (val.length > 50) {
+      return 'Maximum 50 characters allowed, currently ${val.length}.';
     }
 
     return null;

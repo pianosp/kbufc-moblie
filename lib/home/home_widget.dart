@@ -557,6 +557,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           child: ListView.builder(
                                             padding: EdgeInsets.zero,
                                             shrinkWrap: true,
+                                            physics:
+                                                const ClampingScrollPhysics(),
                                             scrollDirection: Axis.vertical,
                                             itemCount: news.length,
                                             itemBuilder: (context, newsIndex) {

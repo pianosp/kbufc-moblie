@@ -132,6 +132,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 16.0),
                               child: TextFormField(
+                                maxLength: 50,
                                 controller: _model.firstnameController ??=
                                     TextEditingController(
                                   text: UserInfoCall.ftname(
@@ -237,6 +238,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 16.0),
                               child: TextFormField(
+                                maxLength: 50,
                                 controller: _model.lastnameController ??=
                                     TextEditingController(
                                   text: UserInfoCall.ltname(

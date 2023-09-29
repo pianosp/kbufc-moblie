@@ -163,6 +163,7 @@ class _FixtureWidgetState extends State<FixtureWidget>
                             child: ListView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
+                              physics: const ClampingScrollPhysics(),
                               scrollDirection: Axis.vertical,
                               itemCount: fixtureList.length,
                               itemBuilder: (context, fixtureListIndex) {

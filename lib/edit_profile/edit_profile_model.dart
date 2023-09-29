@@ -24,7 +24,9 @@ class EditProfileModel extends FlutterFlowModel {
     if (val.length < 1) {
       return 'Requires at least 1 characters.';
     }
-
+    if (val.length > 50) {
+      return 'Maximum 50 characters allowed, currently ${val.length}.';
+    }
     return null;
   }
 
@@ -38,6 +40,9 @@ class EditProfileModel extends FlutterFlowModel {
 
     if (val.length < 1) {
       return 'Requires at least 1 characters.';
+    }
+    if (val.length > 50) {
+      return 'Maximum 50 characters allowed, currently ${val.length}.';
     }
 
     return null;

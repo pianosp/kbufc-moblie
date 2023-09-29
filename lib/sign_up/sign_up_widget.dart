@@ -255,6 +255,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             20.0, 0.0, 20.0, 30.0),
                         child: TextFormField(
                           controller: _model.phoneController,
+                          maxLength: 10,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.phoneController',
                             Duration(milliseconds: 100),
@@ -329,6 +330,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 30.0),
                         child: TextFormField(
+                          maxLength: 50,
                           controller: _model.firstNameController,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.firstNameController',
@@ -406,6 +408,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 30.0),
                         child: TextFormField(
+                          maxLength: 50,
                           controller: _model.lastNameController,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.lastNameController',
